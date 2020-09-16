@@ -22,7 +22,7 @@ node
    {
      sh "${mavenHome}/bin/mvn clean package"  
    }
-   /*
+  /*
    stage ('ExecuteSonarQubeReport')
    {
     sh "${mavenHome}/bin/mvn sonar:sonar"
@@ -37,8 +37,8 @@ node
     sshagent(['b58a652c-a209-4c25-8bb2-bb28294b3687']) 
     {
     sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@13.126.240.106:/opt/apache-tomcat-9.0.37/webapps"
-}
-}
+    }
+    }
    stage ('SendEmailNotification')
    {
     mail bcc: 'kavitha.k27186@gmail.com', body: '''Build is over..
@@ -46,5 +46,5 @@ node
 Regards,
 kavitha.''', cc: 'kavitha.k27186@gmail.com', from: '', replyTo: '', subject: 'Build is over', to: 'kavitha.k27186@gmail.com'
    }
-   */
+*/
 }
