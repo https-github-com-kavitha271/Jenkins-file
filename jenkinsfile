@@ -5,9 +5,9 @@ node
    
    properties([[$class: 'JiraProjectProperty'], buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5')), pipelineTriggers([pollSCM('* * * * *')])])
    
-   echo "GitHub BranhName ${env.BRANCH_NAME}"
-   echo "Jenkins Job Number ${env.BUILD_NUMBER}"
-   echo "Jenkins Node Name ${env.NODE_NAME}"
+  // echo "GitHub BranhName ${env.BRANCH_NAME}"
+   // echo "Jenkins Job Number ${env.BUILD_NUMBER}"
+   // echo "Jenkins Node Name ${env.NODE_NAME}"
   
    echo "Jenkins Home ${env.JENKINS_HOME}"
    echo "Jenkins URL ${env.JENKINS_URL}"
@@ -22,7 +22,7 @@ node
    {
      sh "${mavenHome}/bin/mvn clean package"  
    }
-   
+   /*
    stage ('ExecuteSonarQubeReport')
    {
     sh "${mavenHome}/bin/mvn sonar:sonar"
@@ -46,4 +46,5 @@ node
 Regards,
 kavitha.''', cc: 'kavitha.k27186@gmail.com', from: '', replyTo: '', subject: 'Build is over', to: 'kavitha.k27186@gmail.com'
    }
+   */
 }
